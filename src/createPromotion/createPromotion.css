@@ -6,14 +6,17 @@ main {
 
 form {
     display: flex;
-    height: 60vh;
-    flex-flow: column wrap;
+    flex-flow: row nowrap;
     padding: 12px 0;
     position: relative;
 }
 
-form>section {
-    width: 50%;
+.col {
+    flex: 1 1;
+}
+
+.property {
+    width: 100%;
     min-height: 70px;
     padding: 8px 36px;
     box-sizing: border-box;
@@ -40,6 +43,7 @@ form>section {
 
 .value input, textarea, select {
     border: 0;
+    font-size: 16px;
 }
 
 .value textarea {
