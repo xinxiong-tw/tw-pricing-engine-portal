@@ -1,0 +1,38 @@
+main {
+    padding: 0 80px;
+}
+
+.filters {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.filters button {
+    margin-right: 12px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table th, td {
+    border: 1px solid black;
+}
+
+table th {
+    padding: 20px 70px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 41px;
+    min-width: 240px;
+    box-sizing: border-box;
+    background-color: #eee;
+}
+
+table td {
+    padding: 15px 20px;
+    height: 60px;
+    box-sizing: border-box;
+    background-color: rgba(238, 238, 238, 0.4);
+}

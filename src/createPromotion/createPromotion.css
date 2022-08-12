@@ -1,0 +1,67 @@
+main {
+    width: 72vw;
+    margin: auto;
+    background: rgba(237, 241, 243, 1);
+}
+
+form {
+    display: flex;
+    height: 60vh;
+    flex-flow: column wrap;
+    padding: 12px 0;
+    position: relative;
+}
+
+form>section {
+    width: 50%;
+    min-height: 70px;
+    padding: 8px 36px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.key {
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.value {
+    width: 70%;
+    display: flex;
+}
+
+.value * {
+    width: 100%;
+}
+
+.value input, textarea, select {
+    border: 0;
+}
+
+.value textarea {
+    resize: vertical;
+}
+
+.radios * {
+    width: auto;
+}
+
+.radio {
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.radio label {
+    padding: 8px 12px;
+}
+
+form input[type="submit"] {
+    position: absolute;
+    top: calc(100% + 28px);
+    right: 0;
+}

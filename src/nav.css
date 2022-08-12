@@ -1,0 +1,51 @@
+nav {
+    display: flex;
+    justify-content: center;
+    min-height: 90px;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+nav div {
+    display: flex;
+    margin: 0 16px;
+    justify-content: center;
+}
+
+nav img {
+    position: absolute;
+    left: 30px;
+}
+
+nav div a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 16px 0;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+@media all and (max-width: 769px) {
+    nav div {
+        width: 100%;
+    }
+
+    nav img {
+        position: static;
+    }
+
+    nav {
+        margin-bottom: 16px;
+    }
+}
+
+nav div a:hover {
+    opacity: 0.7;
+}
+
+nav div a.active {
+    color: #BD4257;
+    border-bottom: 3px solid currentColor;
+    margin-bottom: -3px;
+}

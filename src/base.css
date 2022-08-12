@@ -1,0 +1,24 @@
+* {
+    font-family: Inter, sans-serif;
+    margin: 0;
+}
+
+body {
+    background-color: white;
+}
+
+button, .button {
+    cursor: pointer;
+    background: rgba(102, 102, 102, 1);
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 13px 39px;
+    border-radius: 4px;
+    border: 0;
+}
+
+
+button:hover, .button:hover {
+    opacity: 0.7;
+}

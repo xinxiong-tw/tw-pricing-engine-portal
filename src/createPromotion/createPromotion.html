@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Promotion</title>
+    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="../nav.css">
+    <link rel="stylesheet" href="createPromotion.css">
+</head>
+<body>
+<nav>
+    <img class="logo" src="../../assets/logo.svg" alt="thoughtworks">
+    <div>
+        <a href="../">Home</a>
+    </div>
+    <div>
+        <a href="../promotionList/promotionList.html">Promotion List</a>
+    </div>
+</nav>
+<main>
+    <form action="">
+        <section>
+            <div class="key">
+                <label for="title">Title</label>
+            </div>
+            <div class="value text">
+                <input type="text" id="title" name="title"/>
+            </div>
+        </section>
+        <section>
+            <div class="key">
+                <label for="priority">Priority</label>
+            </div>
+            <div class="value text">
+                <input type="number" id="priority" name="priority"/>
+            </div>
+        </section>
+        <section>
+            <div class="key">
+                <label for="startDate">Start Date</label>
+            </div>
+            <div class="value text">
+                <input type="datetime-local" id="startDate" name="startDate"/>
+            </div>
+        </section>
+        <section>
+            <div class="key">
+                <label for="endDate">End Date</label>
+            </div>
+            <div class="value text">
+                <input type="datetime-local" id="endDate" name="endDate">
+            </div>
+        </section>
+        <section>
+            <div class="key">
+                <span>Enabled</span>
+            </div>
+            <div class="value radios">
+                <div class="radio">
+                    <input type="radio" name="isEnabled" id="enabled" value="true">
+                    <label for="enabled">Yes</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="isEnabled" id="disabled" value="false">
+                    <label for="disabled">No</label>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="key">
+                <label for="description">Description</label>
+            </div>
+            <div class="value">
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            </div>
+        </section>
+        <section>
+            <div class="key">
+                <label for="discountType">Discount Type</label>
+            </div>
+            <div class="value">
+                <select name="discountType" id="discountType">
+                    <option value="discount">discount</option>
+                    <option value="reduce">reduce</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div class="key">
+                <label for="discountRate">Discount Rate</label>
+            </div>
+            <div class="value">
+                <input type="number" id="discountRate">
+            </div>
+        </section>
+        <section>
+            <div class="key">
+                <label for="reductionAmount">Reduction Amount</label>
+            </div>
+            <div class="value">
+                <input type="number" id="reductionAmount">
+            </div>
+        </section>
+        <section>
+            <div class="key">
+                <span>Vip Only?</span>
+            </div>
+            <div class="value radios">
+                <div class="radio">
+                    <input type="radio" name="isOnlyForMembers" id="onlyForMembers" value="true">
+                    <label for="onlyForMembers">Yes</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="isOnlyForMembers" id="notOnlyForMembers" value="false">
+                    <label for="notOnlyForMembers">No</label>
+                </div>
+            </div>
+        </section>
+
+        <input class="button" type="submit" value="Submit">
+    </form>
+</main>
+</body>
+</html>
