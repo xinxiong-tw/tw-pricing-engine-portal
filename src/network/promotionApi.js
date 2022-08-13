@@ -23,4 +23,16 @@ export class PromotionApi {
         });
         return await response.json();
     }
+
+    static async updatePromotion(data, id) {
+        let url = new URL(`${this.PROMOTION_HOST}/promotions/${id}`);
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+        });
+        return await response.json();
+    }
 }

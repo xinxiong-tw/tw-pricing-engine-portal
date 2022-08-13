@@ -1,18 +1,7 @@
 import {PromotionApi} from "../network/promotionApi.js";
-
-class PromotionManager {
-    static newPromotion = {};
-    static editedPromotion;
-
-}
+import {clearEditedPromotion, getEditedPromotionId, isEditPromotion, PromotionManager} from "./promotionManager.mjs";
 
 const form = document.querySelector('form');
-const titleInput = document.querySelector('#title');
-const priorityInput = document.querySelector('#priority');
-const startDateInput = document.querySelector('#startDate');
-const endDateInput = document.querySelector('#endDate');
-const isEnabledInput = document.querySelector('#enabled');
-const descriptionInput = document.querySelector('#description');
 const typeInput = document.querySelector('#type');
 const discountRateInput = document.querySelector('#discountRate');
 const reductionAmountInput = document.querySelector('#reductionAmount');
@@ -34,7 +23,7 @@ typeInput.addEventListener('change', () => {
     });
 });
 
-form.addEventListener('submit', event => {
+form.addEventListener('submit', async event => {
     event.preventDefault();
     const data = new FormData(form);
     const dataObject = Object.fromEntries(data.entries());
@@ -43,5 +32,36 @@ form.addEventListener('submit', event => {
     dataObject.discountRate = Number(dataObject.discountRate);
     dataObject.reductionAmount = Number(dataObject.reductionAmount);
     dataObject.priority = Number(dataObject.priority);
-    PromotionApi.createPromotion(dataObject).then(console.log);
+    if (isEditPromotion()) {
+        await updatePromotion(dataObject);
+    } else {
+        await createPromotion(dataObject);
+    }
+    window.location.assign("../promotionList/promotionList.html");
 });
+
+function showEditedPromotion() {
+    Object.entries(PromotionManager.editedPromotion).forEach(([key, value]) => {
+        let element = form.querySelector(`*[name=${key}]`);
+        if (element) {
+            element.value = value;
+        }
+    });
+
+    typeInput.dispatchEvent(new Event('change'));
+    form.querySelector('input[type=submit]').value = "Update"
+}
+
+async function updatePromotion(dataObject) {
+    await PromotionApi.updatePromotion(dataObject, getEditedPromotionId());
+    clearEditedPromotion();
+}
+
+async function createPromotion(dataObject) {
+    await PromotionApi.createPromotion(dataObject).then(console.log);
+}
+
+
+if (isEditPromotion()) {
+    showEditedPromotion();
+}

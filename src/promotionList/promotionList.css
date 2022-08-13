@@ -36,3 +36,11 @@ table td {
     box-sizing: border-box;
     background-color: rgba(238, 238, 238, 0.4);
 }
+
+.title {
+    color: forestgreen;
+}
+
+.title:hover {
+    text-decoration: underline;
+}

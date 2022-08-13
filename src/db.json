@@ -1,28 +1,56 @@
 {
   "promotions": [
     {
-      "id": 1,
       "title": "promotion 1",
-      "description": "discount 30%",
-      "startDate": "2022-08-12",
-      "endDate": "2022-08-22",
-      "type": "discount",
+      "priority": 3,
+      "startDate": "2022-08-13",
+      "endDate": "2022-08-27",
       "isEnabled": true,
+      "description": "discount 30%",
+      "type": "discount",
       "discountRate": 30,
-      "isVipOnly": true,
-      "priority": 1
+      "reductionAmount": 0,
+      "isVipOnly": false,
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "promotion 2",
-      "description": "reduce 20",
+      "title": "promotion 3",
+      "priority": 1,
       "startDate": "2022-08-12",
-      "endDate": "2022-8-22",
-      "type": "reduce",
+      "endDate": "2022-08-22",
       "isEnabled": true,
+      "description": "reduce 20..",
+      "type": "reduce",
+      "discountRate": 0,
       "reductionAmount": 20,
       "isVipOnly": false,
-      "priority": 1
+      "id": 2
+    },
+    {
+      "title": "123123",
+      "priority": 11,
+      "startDate": "2022-08-14",
+      "endDate": "2022-08-27",
+      "isEnabled": true,
+      "description": "asdfsadf",
+      "type": "discount",
+      "discountRate": 2,
+      "reductionAmount": 0,
+      "isVipOnly": false,
+      "id": 3
+    },
+    {
+      "title": "title23123",
+      "priority": 22,
+      "startDate": "2022-08-04",
+      "endDate": "2022-08-31",
+      "isEnabled": true,
+      "description": "ssssddddd",
+      "type": "reduce",
+      "discountRate": 0,
+      "reductionAmount": 100,
+      "isVipOnly": false,
+      "id": 4
     }
   ]
 }

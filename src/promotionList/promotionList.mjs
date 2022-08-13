@@ -1,8 +1,6 @@
 import {PromotionApi} from "../network/promotionApi.js";
-
-function formatDate(date) {
-    return dayjs(date).format('YYYY.MM.DD')
-}
+import {PromotionManager} from "../createPromotion/promotionManager.mjs";
+import {formatDate} from "../utils/index.js";
 
 function createPromotionListRow(promotion) {
     const tr = document.createElement("tr");
@@ -10,6 +8,8 @@ function createPromotionListRow(promotion) {
     id.appendChild(document.createTextNode(promotion.id));
     const title = document.createElement("td");
     title.appendChild(document.createTextNode(promotion.title));
+    title.classList.add("title");
+    title.addEventListener('click', () => editPromotion(promotion))
     const starDate = document.createElement("td");
     starDate.appendChild(document.createTextNode(formatDate(promotion.startDate)));
     const endDate = document.createElement("td");
@@ -55,3 +55,8 @@ document.querySelector('#discountFilterButton').addEventListener('click', () => 
 document.querySelector('#reductionFilterButton').addEventListener('click', () => {
     loadAndShowPromotions({type: 'reduce'});
 })
+
+function editPromotion(promotion) {
+    PromotionManager.editedPromotion = promotion;
+    window.location.assign("../createPromotion/createPromotion.html");
+}
