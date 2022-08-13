@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../base.css">
     <link rel="stylesheet" href="../nav.css">
     <link rel="stylesheet" href="createPromotion.css">
+    <script src="createPromotion.mjs" type="module"></script>
 </head>
 <body>
 <nav>
@@ -25,7 +26,7 @@
                     <label for="title">Title</label>
                 </div>
                 <div class="value">
-                    <input type="text" id="title" name="title"/>
+                    <input type="text" id="title" name="title" required/>
                 </div>
             </section>
             <section class="property">
@@ -33,7 +34,7 @@
                     <label for="priority">Priority</label>
                 </div>
                 <div class="value">
-                    <input type="number" id="priority" name="priority"/>
+                    <input type="number" id="priority" name="priority" min="0" max="9999" required/>
                 </div>
             </section>
             <section class="property">
@@ -41,7 +42,7 @@
                     <label for="startDate">Start Date</label>
                 </div>
                 <div class="value">
-                    <input type="datetime-local" id="startDate" name="startDate"/>
+                    <input type="date" id="startDate" name="startDate" required/>
                 </div>
             </section>
             <section class="property">
@@ -49,7 +50,7 @@
                     <label for="endDate">End Date</label>
                 </div>
                 <div class="value">
-                    <input type="datetime-local" id="endDate" name="endDate">
+                    <input type="date" id="endDate" name="endDate" required>
                 </div>
             </section>
             <section class="property">
@@ -58,7 +59,7 @@
                 </div>
                 <div class="value radios">
                     <div class="radio">
-                        <input type="radio" name="isEnabled" id="enabled" value="true">
+                        <input type="radio" name="isEnabled" id="enabled" value="true" checked>
                         <label for="enabled">Yes</label>
                     </div>
                     <div class="radio">
@@ -72,17 +73,17 @@
                     <label for="description">Description</label>
                 </div>
                 <div class="value">
-                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="10" required></textarea>
                 </div>
             </section>
         </section>
         <section class="col">
             <section class="property">
                 <div class="key">
-                    <label for="discountType">Discount Type</label>
+                    <label for="type">Discount Type</label>
                 </div>
                 <div class="value">
-                    <select name="discountType" id="discountType">
+                    <select name="type" id="type">
                         <option value="discount">discount</option>
                         <option value="reduce">reduce</option>
                     </select>
@@ -93,15 +94,15 @@
                     <label for="discountRate">Discount Rate</label>
                 </div>
                 <div class="value">
-                    <input type="number" id="discountRate">
+                    <input type="number" id="discountRate" name="discountRate" min="0" max="100" required>
                 </div>
             </section>
-            <section class="property">
+            <section class="property hide">
                 <div class="key">
                     <label for="reductionAmount">Reduction Amount</label>
                 </div>
                 <div class="value">
-                    <input type="number" id="reductionAmount">
+                    <input type="number" id="reductionAmount" name="reductionAmount" min="0">
                 </div>
             </section>
             <section class="property">
@@ -110,17 +111,17 @@
                 </div>
                 <div class="value radios">
                     <div class="radio">
-                        <input type="radio" name="isOnlyForMembers" id="onlyForMembers" value="true">
+                        <input type="radio" name="isVipOnly" id="onlyForMembers" value="true">
                         <label for="onlyForMembers">Yes</label>
                     </div>
                     <div class="radio">
-                        <input type="radio" name="isOnlyForMembers" id="notOnlyForMembers" value="false">
+                        <input type="radio" name="isVipOnly" id="notOnlyForMembers" value="false" checked>
                         <label for="notOnlyForMembers">No</label>
                     </div>
                 </div>
             </section>
         </section>
-        <input class="button" type="submit" value="Submit">
+        <input id="submit" class="button" type="submit" value="Submit">
     </form>
 </main>
 </body>

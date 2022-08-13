@@ -64,8 +64,12 @@ form {
     padding: 8px 12px;
 }
 
-form input[type="submit"] {
+#submit {
     position: absolute;
     top: calc(100% + 28px);
     right: 0;
+}
+
+.hide {
+    display: none;
 }

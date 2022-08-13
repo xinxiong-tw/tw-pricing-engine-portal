@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../base.css">
     <link rel="stylesheet" href="../nav.css">
     <link rel="stylesheet" href="promotionList.css">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script type="module" src="promotionList.mjs"></script>
 </head>
 <body>
 <nav>
@@ -19,11 +21,11 @@
 </nav>
 <main>
     <div class="filters">
-        <button>ALL</button>
-        <button>Discount Type</button>
-        <button>Reduction Type</button>
+        <button id="allButton">ALL</button>
+        <button id="discountFilterButton">Discount Type</button>
+        <button id="reductionFilterButton">Reduction Type</button>
     </div>
-    <table>
+    <table id="list">
         <tr>
             <th>Id</th>
             <th>Title</th>
@@ -31,22 +33,6 @@
             <th>EndDate</th>
             <th>Type</th>
             <th>Description</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>promotion 1</td>
-            <td>2022.07.12</td>
-            <td>2022.07.12</td>
-            <td>discount</td>
-            <td>hello</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>promotion 2</td>
-            <td>2022.07.12</td>
-            <td>2022.07.12</td>
-            <td>reduction</td>
-            <td>hello</td>
         </tr>
     </table>
 </main>

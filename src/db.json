@@ -1,0 +1,28 @@
+{
+  "promotions": [
+    {
+      "id": 1,
+      "title": "promotion 1",
+      "description": "discount 30%",
+      "startDate": "2022-08-12",
+      "endDate": "2022-08-22",
+      "type": "discount",
+      "isEnabled": true,
+      "discountRate": 30,
+      "isVipOnly": true,
+      "priority": 1
+    },
+    {
+      "id": 2,
+      "title": "promotion 2",
+      "description": "reduce 20",
+      "startDate": "2022-08-12",
+      "endDate": "2022-8-22",
+      "type": "reduce",
+      "isEnabled": true,
+      "reductionAmount": 20,
+      "isVipOnly": false,
+      "priority": 1
+    }
+  ]
+}
